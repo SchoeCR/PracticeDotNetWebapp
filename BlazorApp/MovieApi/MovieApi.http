@@ -1,0 +1,10 @@
+﻿@MovieApi_HostAddress = https://localhost:7283
+
+POST {{MovieApi_HostAddress}}/movies
+Content-Type: application/json
+{
+  "Title":"Captain America",
+  "Year":2004,
+  "PosterUri" : "/captainamerica.png"
+}
+###
