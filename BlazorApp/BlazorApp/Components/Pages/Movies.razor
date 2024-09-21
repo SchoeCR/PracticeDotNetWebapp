@@ -1,10 +1,47 @@
 ﻿@page "/movies"
+@using MovieApi
 @attribute [StreamRendering]
 
 <PageTitle>Movies</PageTitle>
 
 <h1>Movies</h1>
 
+<p>Movie title and year of release.</p>
+
+@if (movies == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in movies)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Year</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 @code {
+    List<Movie> movies = new();
+
+    protected override void OnInitialized()
+    {
+        movies.AddRange(new List<Movie>
+        {
+            new Movie { Title = "Star Wars: The Phantom Menace", Year = 1999 }
+        });
+    }
 
 }
