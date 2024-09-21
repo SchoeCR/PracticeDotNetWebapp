@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace MovieApi
+namespace MovieApi.Data
 {
     public class MovieDb : DbContext
     {

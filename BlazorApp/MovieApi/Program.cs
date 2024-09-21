@@ -1,10 +1,26 @@
 using Microsoft.EntityFrameworkCore;
 using MovieApi;
+using MovieApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<MovieDb>(opt => opt.UseInMemoryDatabase("MovieDb"));
+
+var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
+
+builder.Services.AddDbContext<MovieDb>(options => options.UseSqlite("Data Source=movies.db"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 var app = builder.Build();
+
+// Initialize the database
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<MovieDb>();
+    if (db.Database.EnsureCreated())
+    {
+        SeedData.Initialize(db);
+    }
+}
 
 app.MapGet("/movies", async (MovieDb db) => await db.Movies.ToListAsync());
 
