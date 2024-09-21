@@ -1,0 +1,71 @@
+﻿@page "/movies"
+
+@attribute [StreamRendering]
+
+@implements IDisposable
+@inject PersistentComponentState ApplicationState
+
+@inject MoviesHttpClient Http
+
+
+<PageTitle>Movies</PageTitle>
+
+<h1>Modern Movies</h1>
+
+<p>Movie title and year of release.</p>
+
+@if (movieDtos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in movieDtos)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Year</td>
+                    <td><img src ="@movie.PosterUri" alt="Movie poster" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    
+    private MovieDto[]? movieDtos;
+    private PersistingComponentStateSubscription persistingSubscription;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        persistingSubscription = ApplicationState.RegisterOnPersisting(PersistData);
+
+        if (!ApplicationState.TryTakeFromJson<MovieDto[]>(nameof(movieDtos), out var restoredData))
+        {
+            movieDtos = await Http.GetTodoItemsAsync();
+        }
+        else
+        {
+            movieDtos = restoredData!;
+        }
+    }
+
+    private Task PersistData()
+    {
+        ApplicationState.PersistAsJson(nameof(movieDtos), movieDtos);
+
+        return Task.CompletedTask;
+    }
+
+    
+    void IDisposable.Dispose() => persistingSubscription.Dispose();
+}
