@@ -11,14 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538de80e-ab54-4f50-9056-a1ecfbbbb216" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazorApp/MovieDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp/MoviesHttpClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorApp/Components/Pages/Movies.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Components/Pages/Movies.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi/Data/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Data/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApi/movies.db" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/movies.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi/movies.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi/movies.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +27,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2mMCjl8w2bClIuQ8t3NipMOA1BA" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,8 +42,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.BlazorApp: http.executor": "Run",
+    ".NET Launch Settings Profile.BlazorApp: http.executor": "Debug",
     ".NET Launch Settings Profile.MovieApi: http.executor": "Run",
+    ".NET Launch Settings Profile.MovieApi: https.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "cs-view-movies",
@@ -64,7 +64,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BlazorApp: http">
+  <component name="RunManager" selected="Multi-Launch.Multi-Launch: BlazorApp">
     <configuration name="BlazorApp: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -125,6 +125,42 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Multi-Launch: BlazorApp" type="com.intellij.execution.configurations.multilaunch" factoryName="MultiLaunchConfiguration">
+      <rows>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.MovieApi: https" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="afterPreviousStarted" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.BlazorApp: http" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+      </rows>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.BlazorApp: http" />
+      <item itemvalue=".NET Launch Settings Profile.BlazorApp: https" />
+      <item itemvalue=".NET Launch Settings Profile.MovieApi: http" />
+      <item itemvalue=".NET Launch Settings Profile.MovieApi: https" />
+      <item itemvalue="Multi-Launch.Multi-Launch: BlazorApp" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

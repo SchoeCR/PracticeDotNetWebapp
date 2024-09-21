@@ -26,6 +26,9 @@ if (builder.Environment.IsDevelopment())
     app.UseOpenApi();
     app.UseSwaggerUi();
 }
+
+app.UseHttpsRedirection();
+
 app.MapGet("/movies", async (MovieDb db) => await db.Movies.ToListAsync());
 
 app.MapGet("/movies/{id}", async (int id, MovieDb db) =>

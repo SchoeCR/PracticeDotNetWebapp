@@ -1,5 +1,12 @@
 ﻿@page "/movies"
+
 @attribute [StreamRendering]
+
+@implements IDisposable
+@inject PersistentComponentState ApplicationState
+
+@inject MoviesHttpClient Http
+
 
 <PageTitle>Movies</PageTitle>
 
@@ -7,7 +14,7 @@
 
 <p>Movie title and year of release.</p>
 
-@if (movies == null)
+@if (movieDtos == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -21,7 +28,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var movie in movies)
+            @foreach (var movie in movieDtos)
             {
                 <tr>
                     <td>@movie.Title</td>
@@ -34,14 +41,31 @@ else
 }
 
 @code {
-    List<MovieDto> movies = new();
-
-    protected override void OnInitialized()
+    
+    private MovieDto[]? movieDtos;
+    private PersistingComponentStateSubscription persistingSubscription;
+    
+    protected override async Task OnInitializedAsync()
     {
-        movies.AddRange(new List<MovieDto>
+        persistingSubscription = ApplicationState.RegisterOnPersisting(PersistData);
+
+        if (!ApplicationState.TryTakeFromJson<MovieDto[]>(nameof(movieDtos), out var restoredData))
         {
-            new MovieDto { Title = "Star Wars: The Phantom Menace", Year = "1999", PosterUri = "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace#/media/File:Star_Wars_Phantom_Menace_poster.jpg" }
-        });
+            movieDtos = await Http.GetTodoItemsAsync();
+        }
+        else
+        {
+            movieDtos = restoredData!;
+        }
     }
 
+    private Task PersistData()
+    {
+        ApplicationState.PersistAsJson(nameof(movieDtos), movieDtos);
+
+        return Task.CompletedTask;
+    }
+
+    
+    void IDisposable.Dispose() => persistingSubscription.Dispose();
 }
