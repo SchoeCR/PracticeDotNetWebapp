@@ -1,27 +1,31 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using MovieApi;
 using MovieApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
-
 builder.Services.AddDbContext<MovieDb>(options => options.UseSqlite("Data Source=movies.db"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+// Add services to the container
+builder.Services.AddEndpointsApiExplorer();
+
+// Add NSwag services
+builder.Services.AddOpenApiDocument();
+
 var app = builder.Build();
 
-// Initialize the database
-var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
-using (var scope = scopeFactory.CreateScope())
+if (builder.Environment.IsDevelopment())
 {
-    var db = scope.ServiceProvider.GetRequiredService<MovieDb>();
-    if (db.Database.EnsureCreated())
-    {
-        SeedData.Initialize(db);
-    }
-}
+    // Seed the database
+    await using var scope = app.Services.CreateAsyncScope();
+    await SeedData.InitializeAsync(scope.ServiceProvider);
 
+    // Add OpenAPI/Swagger generator and the Swagger UI
+    app.UseOpenApi();
+    app.UseSwaggerUi();
+}
 app.MapGet("/movies", async (MovieDb db) => await db.Movies.ToListAsync());
 
 app.MapGet("/movies/{id}", async (int id, MovieDb db) =>
