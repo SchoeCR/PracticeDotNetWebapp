@@ -27,6 +27,7 @@ else
                 <tr>
                     <td>@movie.Title</td>
                     <td>@movie.Year</td>
+                    <td><img src ="@movie.PosterUri" alt="Movie poster" /></td>
                 </tr>
             }
         </tbody>
@@ -40,7 +41,7 @@ else
     {
         movies.AddRange(new List<Movie>
         {
-            new Movie { Title = "Star Wars: The Phantom Menace", Year = 1999 }
+            new Movie { Title = "Star Wars: The Phantom Menace", Year = 1999, PosterUri = "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace#/media/File:Star_Wars_Phantom_Menace_poster.jpg" }
         });
     }
 
