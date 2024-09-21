@@ -11,14 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538de80e-ab54-4f50-9056-a1ecfbbbb216" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MovieApi/Data/SeedData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorApp/Components/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Components/App.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorApp/Components/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Components/Layout/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorApp/Components/Layout/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Components/Layout/NavMenu.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi.Tests/MovieApi.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi.Tests/MovieApi.Tests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApi/MovieApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/MovieApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi/MovieDb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Data/MovieDb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.BlazorApp: http.executor": "Run",
+    ".NET Launch Settings Profile.MovieApi: http.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "cs-view-movies",
@@ -134,7 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726877195835</updated>
-      <workItem from="1726877198217" duration="9886000" />
+      <workItem from="1726877198217" duration="11293000" />
     </task>
     <servers />
   </component>
