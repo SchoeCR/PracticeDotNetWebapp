@@ -5,9 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{C535E0F8-2C6C-4A65-99EE-23852CBF460D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi", "MovieApi\MovieApi.csproj", "{CD9806DC-0A3F-4D29-AFC4-A8B4B97B3896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApi", "MovieApi\MovieApi.csproj", "{CD9806DC-0A3F-4D29-AFC4-A8B4B97B3896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Tests", "MovieApi.Tests\MovieApi.Tests.csproj", "{2C6BB161-BF9E-4053-9D4E-68FADC0A3AD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApi.Tests", "MovieApi.Tests\MovieApi.Tests.csproj", "{2C6BB161-BF9E-4053-9D4E-68FADC0A3AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
