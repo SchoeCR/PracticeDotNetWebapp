@@ -11,8 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538de80e-ab54-4f50-9056-a1ecfbbbb216" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MovieApi/MovieApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/MovieApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorApp/MovieDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp/Components/Pages/Movies.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/Components/Pages/Movies.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi/Data/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/Data/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi/movies.db" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApi/movies.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi/movies.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApi/movies.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +64,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.MovieApi: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BlazorApp: http">
     <configuration name="BlazorApp: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -128,7 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726877195835</updated>
-      <workItem from="1726877198217" duration="11293000" />
+      <workItem from="1726877198217" duration="14227000" />
     </task>
     <servers />
   </component>

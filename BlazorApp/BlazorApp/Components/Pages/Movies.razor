@@ -1,5 +1,4 @@
 ﻿@page "/movies"
-@using MovieApi
 @attribute [StreamRendering]
 
 <PageTitle>Movies</PageTitle>
@@ -35,13 +34,13 @@ else
 }
 
 @code {
-    List<Movie> movies = new();
+    List<MovieDto> movies = new();
 
     protected override void OnInitialized()
     {
-        movies.AddRange(new List<Movie>
+        movies.AddRange(new List<MovieDto>
         {
-            new Movie { Title = "Star Wars: The Phantom Menace", Year = 1999, PosterUri = "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace#/media/File:Star_Wars_Phantom_Menace_poster.jpg" }
+            new MovieDto { Title = "Star Wars: The Phantom Menace", Year = "1999", PosterUri = "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace#/media/File:Star_Wars_Phantom_Menace_poster.jpg" }
         });
     }
 
